@@ -71,6 +71,23 @@ class TestBaseModel__str__(unittest.TestCase):
         model = BaseModel()
         self.assertEqual(type(model.__str__()), str)
 
+    def test_arg_in_str(self):
+        model = BaseModel()
+        with self.assertRaises(TypeError):
+            model.__str__(None)
+
+    def test_str_representation(self):
+        dt = datetime.utcnow()
+        dt_repr = repr(dt)
+        model = BaseModel()
+        model.id = "12345"
+        model.created_at = model.updated_at = dt
+        modelstr = model.__str__()
+        self.assertIn("[BaseModel] (12345)", modelstr)
+        self.assertIn("'id': '12345'", modelstr)
+        self.assertIn("'created_at': " + dt_repr, modelstr)
+        self.assertIn("'updated_at': " + dt_repr, modelstr)
+
 
 class TestBaseModel_save(unittest.TestCase):
     """Unittests for testing save method of the BaseModel class."""
