@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines a class BaseModel"""
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -25,6 +26,8 @@ class BaseModel:
                         setattr(self, key, datetime.fromisoformat(value))
                     else:
                         setattr(self, key, value)
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         """Returns string representation of model."""
@@ -33,6 +36,7 @@ class BaseModel:
 
     def save(self):
         """Updates the instance attribute `updated_at` with current datetime"""
+        models.storage.save()
         self.updated_at = datetime.utcnow()
 
     def to_dict(self):
