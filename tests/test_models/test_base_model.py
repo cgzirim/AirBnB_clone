@@ -3,6 +3,7 @@
 
     Unittest classes:
         TestBaseModel_instantiation
+        TestBaseModel__str__
         TestBaseModel_save
         TestBaseModel_to_dict
 """
@@ -60,10 +61,21 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertNotEqual(updated_at, model.updated_at)
 
 
+class TestBaseModel__str__(unittest.TestCase):
+    """Unittest for testing __str__ method of the BaseModel class."""
+
+    def test_str_exists(self):
+        self.assertIn("__str__", dir(BaseModel()))
+
+    def test_str_type(self):
+        model = BaseModel()
+        self.assertEqual(type(model.__str__()), str)
+
+
 class TestBaseModel_save(unittest.TestCase):
     """Unittests for testing save method of the BaseModel class."""
 
-    def test_save_exits(self):
+    def test_save_exists(self):
         self.assertIn("save", dir(BaseModel()))
 
     def test_save_updates_updated_at_attr(self):
