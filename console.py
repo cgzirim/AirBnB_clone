@@ -12,7 +12,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, arg):
-        """Exits the program on receiving end-of-file signal."""
+        """On receiving end-of-file signal, exit the program"""
         return True
 
     def emptyline(self):
