@@ -41,13 +41,18 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """On receiving end-of-file signal, exit the program"""
+        print("")
         return True
 
     def emptyline(self):
+        """Do nothing upon receiving an empty line."""
         pass
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel"""
+        """Creates a new instance of BaseModel
+
+        Usage: create <class>
+        """
         args = parse(arg)
         print(args[0])
         if len(args) == 0:
@@ -60,7 +65,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Prints the string representation of an instance based on the class
-        name and id
+        name and id.
+
+        Usage: show <class> <id>
         """
         args = parse(arg)
         if len(args) == 0:
@@ -77,7 +84,9 @@ class HBNBCommand(cmd.Cmd):
             print(obj)
 
     def do_destroy(self, arg):
-        """Deletes an instance based on the class name and id."""
+        """Deletes an instance based on the class name and id.
+        Usage: destroy <class> <id>
+        """
         args = parse(arg)
         if len(args) == 0:
             print("** class name missing **")
@@ -96,6 +105,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints all string representation of all instances based or not on
         the class name.
 
+        Usage: all or all <class>
         Ex: (hbnb) all
             (hbnb) all BaseModel
         """
