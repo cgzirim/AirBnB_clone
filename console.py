@@ -5,12 +5,14 @@ import cmd
 from shlex import split
 from models import storage
 from models.user import User
-from models.base_model import BaseModel
+from models.city import City
+from models.state import State
+from models.place import Place
+from models.review import Review
+from models.amenity import Amenity
 
-CLASSES = [
-    "BaseModel",
-    "User",
-]
+
+CLASSES = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
 
 
 def parse(arg):
