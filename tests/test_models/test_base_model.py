@@ -102,6 +102,14 @@ class TestBaseModel_save(unittest.TestCase):
         model.save()
         self.assertNotEqual(updated_at, model.updated_at)
 
+    def test_save_calls_storage(self):
+        model = BaseModel()
+        model.name = "School"
+        model.save()
+        with open("file.json", "r") as f:
+            key = "BaseModel." + model.id
+            self.assertIn(key, f.read())
+
     def test_save_with_arg(self):
         model = BaseModel()
         with self.assertRaises(TypeError):
