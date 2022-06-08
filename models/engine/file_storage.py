@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a class FileStorage"""
 import json
+from models.user import User
 from models.base_model import BaseModel
 from os.path import exists
 

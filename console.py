@@ -4,10 +4,12 @@ import re
 import cmd
 from shlex import split
 from models import storage
+from models.user import User
 from models.base_model import BaseModel
 
 CLASSES = [
     "BaseModel",
+    "User",
 ]
 
 
