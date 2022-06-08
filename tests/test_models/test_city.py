@@ -26,7 +26,7 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertEqual(str, type(City().id))
 
     def test_id_is_unique(self):
-        self.assertNotEqual(City().id, City().id) 
+        self.assertNotEqual(City().id, City().id)
 
     def test_created_at_exists(self):
         self.assertTrue(City().created_at)
@@ -64,7 +64,7 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertEqual(str, type(City().state_id))
 
     def test_name_public_str(self):
-        self.assertEqual(str, type(City().name))    
+        self.assertEqual(str, type(City().name))
 
 
 class TestCity__str__(unittest.TestCase):
@@ -140,7 +140,7 @@ class TestCity_to_dict(unittest.TestCase):
         self.assertIn("updated_at", model.to_dict())
         self.assertIn("name", model.to_dict())
         self.assertIn("state_id", model.to_dict())
-        
+
     def test_to_dict_contains_added_keys(self):
         model = City()
         model.name = "Ubuntu"

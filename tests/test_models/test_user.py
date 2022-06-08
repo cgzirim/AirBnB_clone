@@ -151,7 +151,6 @@ class TestUser_to_dict(unittest.TestCase):
         self.assertIn("first_name", model.to_dict())
         self.assertIn("last_name", model.to_dict())
 
-
     def test_to_dict_contains_added_keys(self):
         model = User()
         model.name = "Ubuntu"

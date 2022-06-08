@@ -26,7 +26,7 @@ class TestState_instantiation(unittest.TestCase):
         self.assertEqual(str, type(State().id))
 
     def test_id_is_unique(self):
-        self.assertNotEqual(State().id, State().id) 
+        self.assertNotEqual(State().id, State().id)
 
     def test_created_at_exists(self):
         self.assertTrue(State().created_at)

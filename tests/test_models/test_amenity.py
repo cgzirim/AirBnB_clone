@@ -26,7 +26,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(str, type(Amenity().id))
 
     def test_id_is_unique(self):
-        self.assertNotEqual(Amenity().id, Amenity().id) 
+        self.assertNotEqual(Amenity().id, Amenity().id)
 
     def test_created_at_exists(self):
         self.assertTrue(Amenity().created_at)

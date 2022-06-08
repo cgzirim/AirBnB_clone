@@ -26,7 +26,7 @@ class TestReview_instantiation(unittest.TestCase):
         self.assertEqual(str, type(Review().id))
 
     def test_id_is_unique(self):
-        self.assertNotEqual(Review().id, Review().id) 
+        self.assertNotEqual(Review().id, Review().id)
 
     def test_created_at_exists(self):
         self.assertTrue(Review().created_at)
@@ -68,6 +68,7 @@ class TestReview_instantiation(unittest.TestCase):
 
     def test_text_is_public_str(self):
         self.assertEqual(str, type(Review().text))
+
 
 class TestReview__str__(unittest.TestCase):
     """Unittest for testing __str__ method of the Review class."""
