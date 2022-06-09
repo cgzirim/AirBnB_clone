@@ -10,9 +10,10 @@ from models.state import State
 from models.place import Place
 from models.review import Review
 from models.amenity import Amenity
+from models.base_model import BaseModel
 
 
-clsES = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
+CLASSES = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
 
 
 def parse(arg):
@@ -74,7 +75,7 @@ class HBNBCommand(cmd.Cmd):
         print(args[0])
         if len(args) == 0:
             print("** cls name missing **")
-        elif args[0] not in clsES:
+        elif args[0] not in CLASSES:
             print("** cls doesn't exist **")
         else:
             print(eval(args[0])().id)
@@ -89,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
         args = parse(arg)
         if len(args) == 0:
             print("** cls name missing **")
-        elif args[0] not in clsES:
+        elif args[0] not in CLASSES:
             print("** cls doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -107,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
         args = parse(arg)
         if len(args) == 0:
             print("** cls name missing **")
-        elif args[0] not in clsES:
+        elif args[0] not in CLASSES:
             print("** cls doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -128,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
         """
         args = parse(arg)
         if len(args) > 0:
-            if args[0] not in clsES:
+            if args[0] not in CLASSES:
                 print("** cls doesn't exist **")
             else:
                 for key, obj in storage.all().items():
@@ -148,7 +149,7 @@ class HBNBCommand(cmd.Cmd):
         args = parse(arg)
         if len(args) == 0:
             print("** cls name missing **")
-        elif args[0] not in clsES:
+        elif args[0] not in CLASSES:
             print("** cls doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
