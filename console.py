@@ -3,8 +3,6 @@
 import re
 import cmd
 from shlex import split
-
-from click import argument
 from models import storage
 from models.user import User
 from models.city import City
