@@ -60,8 +60,6 @@ class HBNBCommand(cmd.Cmd):
             method = arg[arg.index(".") + 1 : arg.index("(")]
             argument = arg[arg.index("(") + 1 : arg.index(")")]
             argument = "{} {}".format(cls, argument.replace(",", ""))
-            # print(argument)
-            # return
             if method in cmds.keys():
                 return cmds[method](argument)
         self.stdout.write("*** Unknown syntax: %s\n" % arg)
@@ -155,16 +153,11 @@ class HBNBCommand(cmd.Cmd):
         Usage: count <class_name> or <class_name>.count()
         """
         args = parse(arg)
-        if len(args) == 0:
-            print("** class name missing **")
-        elif args[0] not in CLASSES:
-            print("** class doesn't exist **")
-        else:
-            count = 0
-            for key in storage.all().keys():
-                if arg[0] in key:
-                    count += 1
-            print(count)
+        count = 0
+        for key in storage.all().keys():
+            if args[0] in key:
+                count += 1
+        print(count)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id by adding
