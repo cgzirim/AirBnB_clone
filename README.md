@@ -2,7 +2,7 @@
 ## Description
 AirBnB is a complete web application, integrating database storage, a back-end API, and front-end interfacing in the clone of [AirBnB](https://www.airbnb.com/)
 
-The project currently only implement the back-end console.
+This program currently only implement the back-end console.
 
 ## Classes
 This program utilizes the following classes:
