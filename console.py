@@ -38,7 +38,7 @@ def parse(arg):
 class HBNBCommand(cmd.Cmd):
     """Defines the AirBnB command interpreter."""
 
-    prompt = "hbnb "
+    prompt = "(hbnb) "
 
     def do_quit(self, arg):
         """Quit command to exit the program."""
@@ -78,7 +78,6 @@ class HBNBCommand(cmd.Cmd):
         Usage: create <class> or <class>.create()
         """
         args = parse(arg)
-        print(args[0])
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in CLASSES:
