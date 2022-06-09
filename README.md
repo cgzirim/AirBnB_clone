@@ -157,10 +157,10 @@ $ ./console.py
 ```
 
 # Testing
-Unittest for this progrem are defined in the (test)[] folder. To run the entire test suite simultaneously, execute the following command:
-'''
+Unittest for this progrem are defined in the [test](https://github.com/iChigozirim/AirBnB_clone/tree/master/tests) folder. To run the entire test suite simultaneously, execute the following command:
+```
 $ python3 unittest -m discover tests
-'''
+```
 Alternatively, you can specify a single test file to run at a time:
 ```
 $ python3 -m unittest tests/test_models/test_engine/test_file_storage.py
