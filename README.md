@@ -2,7 +2,7 @@
 ## Description
 This repository contains the first version of the project to build a clone of the [AirBnB website](https://www.airbnb.com/).
 
-This version implements a back-end interface (the console) to manage the program's data, and currently only utilizes a file for it's data storage.
+This version implements a back-end interface (the console) to manage the program's data, and currently only utilize a file for data storage.
 
 ![airbnb](https://user-images.githubusercontent.com/88312276/175184273-15f61742-2189-4329-a75a-41cb39301e17.png)
 
